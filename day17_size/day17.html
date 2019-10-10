@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day17 Size</title>
+    <style>
+        html {
+            font-size: 15px;
+        }
+        body {
+            font-size: 20px;
+        }
+
+        #em {
+            width: 15em;
+            height: 15em;
+            background-color: chocolate;
+        }
+
+        #rem {
+            width: 10em;
+            height: 10em;
+            background-color: orangered;
+        }
+
+        #vwh {
+            width: 70vw;
+            height: 40vh;
+            background-color: cadetblue;
+        }
+
+        div > p {
+            padding: 10px;
+            color: bisque;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="em">
+        <p>
+            em是使用自身或父元素的<b>font-size</b>来计算的。</br>
+            </br>父元素body的font-size是20px，所以此div的宽高是 20 * 15 = 300px</br>
+            </br>当自身设置了font-size时，就根据自身的进行计算。
+        </p>
+    </div>
+
+    <div id="rem">
+        <p>
+            rem是使用根元素的font-size来计算的
+        </p>
+    </div>
+
+    <div id="vwh">
+        <p>
+            <b>vw</b>: viewport width，可视区域宽度，50vw既是可视区域宽度的一半<br/>
+            <br/><b>vh</b>: viewport height，可视区域高度，50vh既是可视区域高度的一半<br/>
+            <br/><b>vmax</b>: vw和vh中最大的
+            <br/><b>vmin</b>: vw和vh中最小的
+        </p>
+    </div>
+
+
+</body>
+</html>

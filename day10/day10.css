@@ -1,0 +1,95 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+body {
+    background-color: #eeeeee;
+}
+
+.app {
+    background: eeeeee;
+}
+
+.snapshots {
+    background: blue;
+}
+
+.snapshots  div {
+    border: 1px solid black;
+    height: 200px;
+    width: 100%;
+    background: brown;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.snapshots div:nth-child(1) {
+    background-image: url("../day9/images/1.jpeg");
+}
+
+.snapshots div:nth-child(2) {
+    background-image: url("../day9/images/2.jpeg");
+}
+
+.snapshots div:nth-child(3) {
+    background-image: url("../day9/images/3.jpeg");
+}
+
+.snapshots div:nth-child(4) {
+    background-image: url("../day9/images/4.jpeg");
+}
+
+.snapshots div:nth-child(5) {
+    background-image: url("../day9/images/5.jpeg");
+}
+
+.lyrics {
+    background: lightblue;
+    padding-bottom: 20px;
+}
+
+.hidden {
+    display: block;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.highlight {
+    color: mediumvioletred;
+}
+
+div p {
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .app {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .snapshots {
+        width: 30%;
+    }
+
+    .snapshots div{
+        height: 200px;
+    }
+
+    .lyrics {
+        width: 70%;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+}

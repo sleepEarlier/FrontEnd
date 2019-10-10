@@ -1,0 +1,41 @@
+div {
+    background-color: brown;
+    padding: 20px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+/* 1. 伪类选择器, x:y */
+
+/* 匹配所有作为第一个child的div元素 */
+div:first-child {
+    background-color: blue;
+}
+
+/* 匹配所有作为第二个child的div元素 */
+div:nth-child(2) {
+    background-color: yellow;
+}
+
+/* 鼠标悬停、点击 */
+div:hover,
+div:active {
+    background-color: red;
+}
+
+div:first-child:hover,
+div:first-child:active {
+    background-color: green
+}
+
+/* 2. 伪元素选择器 x::y */
+/* 首字母加粗 */
+p::first-letter {
+ color: brown;
+ font-weight: bold;
+}
+
+/* 链接前加上link */
+[href^=http]::before {
+    content: "Link:"
+}

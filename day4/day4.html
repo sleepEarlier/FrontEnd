@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day 4</title>
+    <style>
+        .bd {
+            background-color: cornflowerblue;
+        }
+        .title {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+        .spire {
+            border: 1px solid white;
+            border-color: white;
+            padding: 10px 30px;
+            margin: 40px 50px;
+            border-radius: 4px;
+            background-color:rgb(255, 138, 112);
+            text-align: center;
+            color: white;
+        }
+        .newText {
+            text-align: left;
+            color: orange;
+        }
+    </style>
+</head>
+<body class="bd">
+    <script>
+        let lines = [
+            "你TM真屌",
+            "你可真帅",
+            "不错啊小伙子",
+            "对不起总理，我想自己努力"
+        ]
+        function addNewLine() {
+            let index = Math.floor(Math.random() * lines.length + 0);
+            let text = lines[index];
+            let ele = document.createElement("h4");
+            ele.className = "newText";
+            let textNode = document.createTextNode(text);
+            ele.appendChild(textNode);
+            let container = document.getElementById("container");
+            container.appendChild(ele);
+        }
+    </script>
+    <h1 class="title">
+        给自己一句鼓励的话
+    </h1>
+    <div id="container"></div>
+    <div class="spire", onclick="addNewLine()">鼓励一下</div>
+</body>
+</html>

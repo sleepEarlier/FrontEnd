@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transition</title>
+    <style>
+        #box {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box-transition {
+            transition-property: background-color, height, width;
+            transition-duration: 1s;
+            transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+    </style>
+</head>
+<body>
+    <script>
+            function doAnimation() {
+                console.log("click");
+                let ele = document.getElementById("box");
+                let wid = ele.offsetWidth + 20;
+                let hei = ele.offsetHeight + 20;
+                ele.style.width = wid + "px";
+                ele.style.height = hei + "px";
+                let r = Math.random() * 255;
+                let g = Math.random() * 255;
+                let b = Math.random() * 255;
+                let color = 'rgb(' + r + "," + g + "," + b + ")";
+                console.log(color);
+                ele.style.backgroundColor =  color;
+            }
+    </script>
+    <div id="box" class="box-transition" onclick="doAnimation()"></div>
+</body>
+</html>

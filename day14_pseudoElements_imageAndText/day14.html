@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day14</title>
+    <style>
+        .pa {
+            font-weight: bold;
+        }
+        a:focus {
+            color: chocolate;
+        }
+
+        a:hover {
+            background-color: antiquewhite;
+        }
+
+        .pa::before {
+            display: inline-block;
+            content: ''; /* content属性必须有，否则不会显示 */
+            vertical-align: middle;
+            background-image: url("http://smt-cdn.yun.city.pingan.com/isz/app/icon/homepage/20190829/gongjiaochuxing.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-left: 15px;
+            margin-right: 5px;
+            width: 30px;
+            height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="pa">有问题就<a href="https://www.baidu.com">百度一下</a></p>
+</body>
+</html>

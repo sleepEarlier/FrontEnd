@@ -1,0 +1,55 @@
+
+/* 匹配所有使用属性 "maskme" 的元素 */
+[maskme] {
+    color: darkred;
+}
+
+/* 上面写法相当于
+*[maskme] {
+    color: darkred;
+}
+*/
+
+/*匹配所有使用属性为 "maskme"，且值为 blue 的元素*/
+[maskme="blue"] {
+    color: blue
+}
+
+/*匹配所有使用属性为 "maskme"，且值包含 spicy 的元素*/
+[maskme~="spicy"] {
+    color: red;
+}
+
+/* 匹配所有使用属性为 "maskme"，且值以 dark 开头的元素 */
+[maskme^=dark] {
+    color: white;
+    background-color: darkslateblue;
+}
+
+/* 匹配所有使用属性为 "maskme"，且值以 al 结尾的元素 */
+[maskme$=al] {
+    color: coral
+}
+
+/* 匹配所有使用属性为 "maskme"，且值包含 ha 结尾的元素 */
+[maskme*=ha] {
+    color: khaki
+}
+
+/* 匹配同时包含maskme和mix属性的元素 */
+[maskme][mix] {
+    color: aquamarine;
+    background-color: darkred;
+    text-align: center;
+    border: 1px dashed white;
+}
+
+/*匹配所有使用属性为 "maskme"，且值为 blue 的p元素*/
+p[maskme="blue"] {
+    color: darkslateblue
+}
+
+/* 匹配有href属性、title属性的a元素 */
+a[href][title] {
+    color: palevioletred
+}

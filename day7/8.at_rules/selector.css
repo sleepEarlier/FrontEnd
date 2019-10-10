@@ -1,0 +1,25 @@
+/*
+@规则在CSS中用于传递元数据、条件信息或其他描述性信息。
+它们以at符号（@）开头，后跟一个标识符来说明它是什么类型的规则，
+然后是某种类型的语法块，以分号（；）结尾。
+由标识符定义的每种类型的 at 规则都有其自己的内部语法和语义。
+
+参考: https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule#Conditional_group_rules
+*/
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@media */
+/* 仅在屏幕尺寸大于等于375时 */
+/*
+
+@media 语法规则是：
+@media mediaType and|not|only (media feture) {
+  // css
+}
+代码中的 screen 是媒体类型，在此表示带有屏幕的设备，比如电脑、手机，还有其它的媒体类型，比如 tv；
+and 用来组合多个条件，这里表示且，还有 not 和 only；min-width 是媒体功能
+*/
+@media (min-width: 375px) {
+    body {
+        background-color: burlywood;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day 13</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        .container {
+            background-color: antiquewhite;
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            /* grid-template-rows: minmax(150px, 1fr) 200px auto; */
+            grid-template-rows: 1fr 2fr 1fr;
+            grid-gap: 15px 30px;
+            /* row-gap: 10px;
+            column-gap: 20px; */
+            /* gap: 10px; */
+        }
+        .container > div {
+            padding: 10px;
+            background-color: chocolate;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>one</div>
+        <div>two</div>
+        <div>three</div>
+        <div>four</div>
+        <div>five</div>
+        <div>six</div>
+        <div>seven</div>
+        <div>eight</div>
+    </div>
+</body>
+</html>

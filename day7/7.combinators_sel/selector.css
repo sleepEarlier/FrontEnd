@@ -1,0 +1,25 @@
+/* A B {} A 元素的所有后代元素 B 都会起作用。 */
+div p {
+    background-color: burlywood;
+}
+
+/* A > B {} : A 元素的直接子节点会起作用 */
+div > p {
+    color:white;
+}
+
+/* A + B {} : 匹配 A 的下一个兄弟节点，AB具有相同的父节点，并且 B 紧跟在 A 的后面 */
+div + p {
+    color: red;
+}
+
+/* A ~ B {} : B是 A 之后的任意一个兄弟节点。 */
+div ~ p {
+    border: 1px dashed darkslateblue;
+}
+
+/* 组选择器A 和 B 元素具有同一规则的 CSS 样式，不同元素使用逗号隔开 */
+div,p {
+    padding: 0px;
+    margin: 0px;
+}

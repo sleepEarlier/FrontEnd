@@ -1,0 +1,9 @@
+.cell {
+    background-color: white;
+    border-bottom: 1px solid darkgray;
+    padding: 0;
+    padding-left: 15px;
+    vertical-align:middle;
+    height: 44px;
+    line-height:44px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@规则</title>
+    <link rel="stylesheet" href="./selector.css">
+</head>
+<body>
+    <pre>
+    /*
+    @规则在CSS中用于传递元数据、条件信息或其他描述性信息。
+    它们以at符号（@）开头，后跟一个标识符来说明它是什么类型的规则，
+    然后是某种类型的语法块，以分号（；）结尾。
+    由标识符定义的每种类型的 at 规则都有其自己的内部语法和语义。
+    
+    参考: https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule#Conditional_group_rules
+    */
+    
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@media */
+    /* 仅在屏幕尺寸大于等于375时 */
+    @media (min-width: 375px) {
+        body {
+            background-color: burlywood;
+        }
+    }  
+    </pre>
+    <br>
+    效果:
+</body>
+</html>

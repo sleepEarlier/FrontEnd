@@ -1,0 +1,36 @@
+body {
+    background-color: orangered;
+}
+
+p {
+    background-color: antiquewhite;
+}
+
+.single-line {
+    /* 超出部分隐藏 ，默认visible, 还有scroll、auto*/
+    overflow: hidden;
+    /* 设置超出部分不换行，默认normal会换行显示，还有pre、pre-wrap、pre-line、break-spaces */
+    white-space: nowrap;
+    /* 只对块级元素起作用，设置超出部分显示，默认clip, 还有ellipsis(即...)，也可使用自定义字符串 */
+    text-overflow: ellipsis;
+}
+
+.two-line {
+    /* 不能设置white-space */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; /* -webkit-inline-box */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+
+.three-line {
+    /* 不能设置white-space */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; /* -webkit-inline-box */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+

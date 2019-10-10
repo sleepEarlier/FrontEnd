@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性选择器</title>
+    <link rel="stylesheet" href="./selector.css">
+</head>
+<body>
+    <pre>
+/* 匹配所有使用属性 "maskme" 的元素 */
+[maskme] {
+    color: darkred;
+}
+
+/* 上面写法相当于
+*[maskme] {
+    color: darkred;
+}
+*/
+
+/*匹配所有使用属性为 "maskme"，且值为 blue 的元素*/
+[maskme="blue"] {
+    color: blue
+}
+
+/*匹配所有使用属性为 "maskme"，且值包含 spicy 的元素*/
+[maskme~="spicy"] {
+    color: red;
+}
+
+/* 匹配所有使用属性为 "maskme"，且值以 dark 开头的元素 */
+[maskme^=dark] {
+    color: white;
+    background-color: darkslateblue;
+}
+
+/* 匹配所有使用属性为 "maskme"，且值以 al 结尾的元素 */
+[maskme$=al] {
+    color: coral
+}
+
+/* 匹配所有使用属性为 "maskme"，且值包含 ha 结尾的元素 */
+[maskme*=ha] {
+    color: khaki
+}
+
+/* 匹配同时包含maskme和mix属性的元素 */
+[maskme][mix] {
+    color: aquamarine;
+    background-color: darkred;
+    text-align: center;
+    border: 1px dashed white;
+}
+
+/*匹配所有使用属性为 "maskme"，且值为 blue 的p元素*/
+p[maskme="blue"] {
+    color: darkslateblue
+}
+
+/* 匹配有href属性、title属性的a元素 */
+a[href][title] {
+    color: palevioletred
+}
+    </pre>
+    <br>
+    效果:
+    <ul>
+        <li num="1">no mask</li>
+        <li num="2" maskme>mask with empty value</li>
+        <li num="3" maskme="blue">mask with "blue"</li>
+        <li num="4" maskme="so spicy lol">mask with "so spicy lol"</li>
+        <li num="5" maskme="darkmode">mask with "dark mode"</li>
+        <li num="6" maskme="be coral">mask with "be coral"</li>
+        <li num="7" maskme="khaki">mask with "khaki"</li>
+        <li num="8" maskme mix>mask and mix</li>
+    </ul>
+    <p>没有属性的p标签</p>
+    <p maskme="blue">包含maskme属性且值为blue的p标签</p>
+    <a href="https://www.baidu.com">只有链接的a标签</a></br>
+    <a href="https://www.baidu.com" title="百度">链接+title的a标签</a>
+</body>
+</html>

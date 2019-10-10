@@ -1,0 +1,117 @@
+/* 1.通用选择器 Universal selector */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 2.标签选择器 */
+p {
+    color: burlywood
+}
+
+/* 3. id选择器 id selector */
+#first {
+    color: green;
+}
+
+/* 4. 类选择器 class selector, 根据属性来匹配HTML元素 */
+.line {
+    background-color: lightblue;
+}
+
+/* 属性选择器 Attribute selectors */
+/* 匹配所有使用属性 "lefe" 的元素 */
+[lefe] {
+    color: blueviolet;
+}
+
+/*匹配所有使用属性为 "lefe"，且值为 liquid 的元素*/
+[lefe="liquid"] {
+    color: goldenrod;
+}
+
+/*匹配所有使用属性为 "lefe"，且值包含 spicy 的元素*/
+[lefe~="spicy"] {
+    color: red;
+}
+
+/* 还有类似于“正则表达式”的属性选择器，比如：[attr^=val] 匹配以 val 开头的元素，[attr$=val] ,匹配以 val 结尾的元素，[attr*=val]匹配包含 val 的字符串的元素 */
+
+
+/* 6. 伪选择器（pseudo-selectors）它包含伪类（pseudo-classes）和伪元素（pseudo-elements）。伪元素（pseudo-elements）选择器，它以“ :: ” 为标识符。这类选择器不是真正意义上的选择器，它作为选择器的一部分，起到选择器匹配元素的限定条件 */
+
+/* a标签访问后的状态 */
+a:visited {
+    color: yellow;
+}
+
+/* a标签鼠标悬停、点击、聚焦时的样式 */
+a:hover,
+a:active,
+a:focus {
+    color: darkred;
+    text-decoration: none;
+}
+
+/* 伪元素选择器以::为标识符，例如修改首字母的样式 */
+
+p::first-letter{
+    font-weight: bold;
+  }
+
+p::first-line{
+font-size: 3em;
+}
+
+/* 在超链接后添加一个向上的弯曲的箭头 */
+[href^=http]::after {
+    content: '⤴';
+}
+
+/* 7. 组合选择器（Combinators）这种选择器可以作用于多个元素，有多种组合方式，下面这些方式，CSS 都会作用于 p 元素。 */
+
+
+/* A B {} A 元素的所有后代元素 B 都会起作用。 */
+div p {
+    color: red;
+}
+
+/* A > B {} : A 元素的直接子节点会起作用 */
+div > p {
+    color: red;
+}
+
+/* A + B {} : 匹配 A 的下一个兄弟节点，AB具有相同的父节点，并且 B 紧跟在 A 的后面 */
+div + p {
+    color: red;
+}
+
+/* A ~ B {} : B是 A 之后的任意一个兄弟节点。 */
+div ~ p {
+    color: red;
+}
+
+/* 组选择器 A, B：A 和 B 元素具有同一规则的 CSS 样式，不同元素使用逗号隔开 */
+div,p {
+    color: red;
+}
+
+/**
+8. @规则
+
+@规则在CSS中用于传递元数据、条件信息或其他描述性信息。它们以at符号（@）开头，后跟一个标识符来说明它是什么类型的规则，然后是某种类型的语法块，以分号（；）结尾。由标识符定义的每种类型的 at 规则都有其自己的内部语法和语义。
+
+@charset and @import (metadata)
+@media or @document (条件，嵌套申明)
+@font-face (描述信息)
+*/
+
+/* 下面这个 CSS 只适用于屏幕超过 800px 的设备： */
+@media (min-width: 801px) {
+    body {
+      margin: 0 auto;
+      width: 800px;
+    }
+}
+
+/* 参考: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS */

@@ -1,0 +1,36 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.title {
+    font-size: 25px;
+    color: black;
+    text-align: center;
+}
+
+.section {
+    color: skyblue;
+    border-bottom: 1px solid lightskyblue;
+    margin-left: 15px;
+}
+
+.content {
+    color: rgba(0, 0, 0, 0.85);
+    letter-spacing: 2px;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.num {
+    color: red;
+}
+
+.triangle {
+    width: 0;
+    /* width style */
+    border: 20px solid;
+    /* top [left, tight] bottom*/
+    border-color: #f30 transparent transparent;
+}

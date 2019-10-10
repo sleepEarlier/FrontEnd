@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 权重(CSS Specifical)</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        #content {
+            background-color: antiquewhite;
+        }
+
+        div > p {
+            padding: 15px;
+        }
+
+        /* table {
+            frame: box;
+        } */
+    </style>
+</head>
+<body>
+    <h2>Day 18: CSS 权重</h2>
+    <div id="content">
+            <p>同一个属性在不同的选择器中设置，浏览器最终渲染时以哪个为准呢？这就是由各个选择器的权重决定的，总体原则是选择器范围越小则权重越大，important权重最大。</p>
+            <p>例如通用选择器权重最小，id选择器权重比类选择器权重大(因为id只能选择一个元素，而类可以选择多个)，而内联样式作用于指定的元素，则具有更大的权重。</p>
+            <p>一般将选择器权重以g-x-y-z表示，比较时从左到右，相同时再比较下一位。在VSCode中，将鼠标悬停在CSS样式上时，会显示对应的权重值。</p>
+    </div>
+    <img src="https://mmbiz.qpic.cn/mmbiz_png/dZjzL3cZLGay4XeiaSgTe7dHrQcECbsV05gcmtA9B48TwCiagxsnz7nSGjmMpkdicpC84lzS5xtibDSWbDWJ9oXdyw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="权重表示" width="800">
+    <table border="1" cellpadding="5px" cellspacing="0px">
+        <tr>
+            <th>选择器</th>
+            <th>权重</th>
+        </tr>
+        <tr>
+            <th>通用选择器: *</th>
+            <th>0-0-0-0</th>
+        </tr>
+        <tr>
+            <th>元素选择器</th>
+            <th>0-0-0-1</th>
+        </tr>
+        <tr>
+            <th>类、伪类、属性选择器</th>
+            <th>0-0-1-0</th>
+        </tr>
+        <tr>
+            <th>id选择器</th>
+            <th>0-1-0-0</th>
+        </tr>
+        <tr>
+            <th>内联样式</th>
+            <th>1-0-0-0</th>
+        </tr>
+        <tr>
+            <th>!important</th>
+            <th>1-0-0-0-0</th>
+        </tr>
+    </table>
+    <p>更形象地表示可以看这张来自<a href="https://specifishity.com/ ">specifishity.com</a>的图片</p>
+    <img src="https://specifishity.com/specifishity.png" alt="css specifical">
+
+</body>
+</html>
