@@ -2,41 +2,41 @@
 
 .header {
     padding: 0 @edge-width;
-    background-color: @background-color;
-    font-size: @nomal-font-size;
-    &:::first-letter: {
-        color: @strong-color;
-        font-size: 24px;
+    background-color: @backgroud-color;
+    .title {
+       // @text-color 在 base.less 定义好的变量
+        color: @text-color;
+        font-size: @nomal-font-size;
+        &::first-letter {
+            font-size: 24px;
+            color: @strong-color;
+        }
+    }
+    p a {
+        color: @main-color;
+        font-size: @nomal-font-size;
+        /** &引用父选择器 此处相当于 p a:hover**/
+        &:hover {
+            color: @strong-color;
+        }
+    }
+    p:nth-child(3) {
+        width: 100px;
+        text-align: center;
+        padding: @small-edge-width;
+        /**引用在 base.less 定义好的选择器 **/
+        .wx-border();
     }
 }
 
-// @import "./base.less";
-
-// .header {
-//     padding: 0 @edge-width;
-//     background-color: @backgroud-color;
-//     .title {
-//        // @text-color 在 base.less 定义好的变量
-//         color: @text-color;
-//         font-size: @nomal-font-size;
-//         &::first-letter {
-//             font-size: 24px;
-//             color: @strong-color;
-//         }
-//     }
-//     p a {
-//         color: @main-color;
-//         font-size: @nomal-font-size;
-//         /**&:hover 相当于 a:hover**/
-//         &:hover {
-//             color: @strong-color;
-//         }
-//     }
-//     p:nth-child(3) {
-//         width: 100px;
-//         text-align: center;
-//         padding: @small-edge-width;
-//         /**引用在 base.less 定义好的选择器 **/
-//         .wx-border();
-//     }
-// }
+.footer {
+    padding: 0 @edge-width;
+    background-color: @backgroud-color;
+    margin-top: @small-edge-width;
+    #alert {
+    width: @edge-width + 80px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+    }
+}
