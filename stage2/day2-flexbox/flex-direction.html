@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex-direction</title>
+    <link rel="stylesheet" href="day2.css">
+</head>
+<body>
+    <div class="title">flex-direction</div>
+    <p>
+            flex-direction决定 flex-item 是从左到右、从右到左、从上到下、还是从下到上进行布局，它会影响主轴的方向，以及items 的布局起点位置。它主要包含 4 个值：
+
+            row（默认）：从水平方向的左侧开始布局；
+            row-reverse：从水平方向的右侧开始布局；
+            column：从垂直方向的顶部开始布局；
+            column-reverse: 从垂直方向的底部开始布局；
+    </p>
+    
+    <div class="title">1. flex-direction: row</div>
+    <div class="container" style="flex-direction: row;">
+        <div class="ele1">詹姆斯哈登</div>
+        <div class="ele2">科比布莱恩特</div>
+        <div class="ele3">库里</div>
+    </div>
+
+    <div class="title">2. flex-direction: row-reverse</div>
+    <div class="container" style="flex-direction: row-reverse;">
+        <div class="ele1">詹姆斯哈登</div>
+        <div class="ele2">科比布莱恩特</div>
+        <div class="ele3">库里</div>
+    </div>
+
+    <div class="title">3. flex-direction: column</div>
+    <div class="container" style="height: 180px;flex-direction: column;">
+            <div class="ele1">詹姆斯哈登</div>
+            <div class="ele2">科比布莱恩特</div>
+            <div class="ele3">库里</div>
+    </div>
+    <div class="title">4. flex-direction: column-reverse</div>
+    <div class="container" style="height: 180px; flex-direction: column-reverse;">
+            <div class="ele1">詹姆斯哈登</div>
+            <div class="ele2">科比布莱恩特</div>
+            <div class="ele3">库里</div>
+    </div>
+</body>
+</html>

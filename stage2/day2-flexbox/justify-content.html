@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>justify-content</title>
+    <link rel="stylesheet" href="day2.css">
+</head>
+<body>
+        <div class="title">justify-content</div>
+        <p>
+            justify-content: 它决定「主轴」items 的对齐方式，flex-direction 会影响主轴的方向，这一点需要注意，主轴不一定是水平方向，不能把 justify-content 看做是控制水平方向的对齐方式。它主要有以下几个值：
+            flex-start（默认）：与主轴的起始位置（main start）对齐；
+            flex-end：与主轴的结束位置（main end）对齐；
+            center：居中于主轴；
+            space-around: 左右边距是中间的 1/2；
+            space-evenly: 每个 item 的间距相等；
+            space-between: 左右无边距；
+        </p>
+        
+        <div class="title">1. justify-content: flex-start</div>
+        <div class="container" style="flex-direction: row; justify-content: flex-start;">
+            <div class="ele1">詹姆斯哈登</div>
+            <div class="ele2">科比布莱恩特</div>
+            <div class="ele3">库里</div>
+        </div>
+    
+        <div class="title">2. justify-content: flex-end</div>
+        <div class="container" style="flex-direction: row; justify-content: flex-end;">
+            <div class="ele1">詹姆斯哈登</div>
+            <div class="ele2">科比布莱恩特</div>
+            <div class="ele3">库里</div>
+        </div>
+    
+        <div class="title">3. justify-content: center</div>
+        <div class="container" style="flex-direction: row; justify-content: center;">
+                <div class="ele1">詹姆斯哈登</div>
+                <div class="ele2">科比布莱恩特</div>
+                <div class="ele3">库里</div>
+        </div>
+
+        <div class="title">4. justify-content: space-around</div>
+        <div class="container" style="flex-direction: row; justify-content: space-around">
+                <div class="ele1">詹姆斯哈登</div>
+                <div class="ele2">科比布莱恩特</div>
+                <div class="ele3">库里</div>
+        </div>
+
+        <div class="title">5. justify-content: space-evenly</div>
+        <div class="container" style="flex-direction: row; justify-content: space-evenly">
+                <div class="ele1">詹姆斯哈登</div>
+                <div class="ele2">科比布莱恩特</div>
+                <div class="ele3">库里</div>
+        </div>
+
+        <div class="title">6. justify-content: space-between</div>
+        <div class="container" style="flex-direction: row; justify-content: space-between">
+                <div class="ele1">詹姆斯哈登</div>
+                <div class="ele2">科比布莱恩特</div>
+                <div class="ele3">库里</div>
+        </div>
+
+        <div class="title">7. flex-direction: column; justify-content: space-around</div>
+        <div class="container" style="flex-direction: column; justify-content: space-around; height: 180px;">
+                <div class="ele1">詹姆斯哈登</div>
+                <div class="ele2">科比布莱恩特</div>
+                <div class="ele3">库里</div>
+        </div>
+
+        <div class="title">7. flex-direction: column; justify-content: space-evenly</div>
+        <div class="container" style="flex-direction: column; justify-content: space-evenly; height: 180px;">
+                <div class="ele1">詹姆斯哈登</div>
+                <div class="ele2">科比布莱恩特</div>
+                <div class="ele3">库里</div>
+        </div>
+
+        <div class="title">7. flex-direction: column; justify-content: space-between</div>
+        <div class="container" style="flex-direction: column; justify-content: space-between; height: 180px;">
+                <div class="ele1">詹姆斯哈登</div>
+                <div class="ele2">科比布莱恩特</div>
+                <div class="ele3">库里</div>
+        </div>
+    
+</body>
+</html>
