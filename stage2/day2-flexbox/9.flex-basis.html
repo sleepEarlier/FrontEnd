@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flew-basis</title>
+    <style>
+        .main {
+            margin: 20px;
+            background-color: #eeeeee;
+            display: flex;
+            width: 600px;
+            height: 70px;
+        }
+        div div {
+            height: 40px;
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        div div:nth-child(1) {
+            background-color: red;
+        }
+
+        div div:nth-child(2) {
+            background-color: black;
+        }
+
+        div div:nth-child(3) {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <p>flex-basis表示item 未扩展或收缩之前的宽度，可以理解为 item 未放入容器时该有的尺寸，默认值是 auto。它会影响剩余空间和不足空间的计算，它对 flex-grow 和 flex-shrink 有很大的影响。</p>
+    <p>这个时候 flex-item 的属性都是默认属性。 flex-grow：0，表示即使有剩余空间也不会扩展； flex-shink：1，如果空间不足将会缩小； flex-basis：auto，自动计算 item 的初始宽度，取值为basis > content-width > width。效果如下:</p>
+    <div class="main">
+        <div id="1">前端小课</div>
+        <div id="2">FlexBox World</div>
+        <div id="3">Layout For CSS</div>
+    </div>
+    <p>给第一个元素设置宽度160px：</p>
+    <div class="main">
+        <div id="1" style="width: 160px;">前端小课</div>
+        <div id="2">FlexBox World</div>
+        <div id="3">Layout For CSS</div>
+    </div>
+    <p>可以看到元素宽度变成了160px</p>
+    <p>再给第一个元素增加flex-basis: 120px</p>
+    <div class="main">
+        <div id="1" style="width: 160px; flex-basis: 120px;">前端小课</div>
+        <div id="2">FlexBox World</div>
+        <div id="3">Layout For CSS</div>
+    </div>
+    <p>由于宽度160px优先级小于flex-basis，可以看到元素宽度变成了120px</p>
+    <p>再给第一个元素增加一个max-width: 110px</p>
+    <div class="main">
+        <div id="1" style="width: 160px; flex-basis: 120px; max-width: 110px;">前端小课</div>
+        <div id="2">FlexBox World</div>
+        <div id="3">Layout For CSS</div>
+    </div>
+    <p>可以看到元素宽度变成了110px，这是由于flex-basis是受max-width、min-width等属性影响的</p>
+    <p>设置所有元素的flex-basis：0，flex-grow：1，最终效果是所有的 item 的尺寸都是一样，设置 flex-basis 为 0 时相当于所有的空间都可以进行分配，每个 item 的初始宽度为 0，这样就达到了所有的 item 宽度一样：</p>
+    <div class="main">
+        <div id="1" style="flex-basis: 0px; flex-grow: 1;">前端小课</div>
+        <div id="2" style="flex-basis: 0px; flex-grow: 1;">FlexBox World</div>
+        <div id="3" style="flex-basis: 0px; flex-grow: 1;">Layout For CSS</div>
+    </div>
+
+    <p>总的来说 flex-basis 最终的值会以 flex-basis -> content size -> width 的属性依次确定它的值。</p>
+</body>
+</html>

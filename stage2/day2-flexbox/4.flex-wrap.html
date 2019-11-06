@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex-wrap</title>
+    <link rel="stylesheet" href="day2.css">
+</head>
+<body>
+        <div class="title">flex-wrap</div>
+        <p>
+            flex-wrap: items 超出容器后该如何显示，是否要多行显示
+            如果为多行显示，可以把每行看做是一个容器，图中主轴对齐方式为 space-around，每行对齐方式都为 space-around。它有以下几个值：
+            
+            nowrap（默认）：单行显示；
+            wrap：多行显示；
+            wrap-reverse：多行显示；
+        </p>
+        
+        <div class="title">1.  flex-wrap: nowrap</div>
+        <div class="flex-wrap-container" style="flex-wrap: nowrap;">
+            <div class="ele1">詹姆斯哈登后撤步</div>
+            <div class="ele2">科比打铁</div>
+            <div class="ele3">库里三分张手就来</div>
+        </div>
+    
+        <div class="title">2.  flex-wrap: wrap</div>
+        <div class="flex-wrap-container" style="flex-wrap: wrap;">
+            <div class="ele1">詹姆斯哈登后撤步</div>
+            <div class="ele2">科比打铁</div>
+            <div class="ele3">库里三分张手就来</div>
+        </div>
+    
+        <div class="title">3.  flex-wrap: wrap-reverse</div>
+        <div class="flex-wrap-container" style="flex-wrap: wrap-reverse;">
+                <div class="ele1">詹姆斯哈登后撤步</div>
+                <div class="ele2">科比打铁</div>
+                <div class="ele3">库里三分张手就来</div>
+        </div>
+    
+</body>
+</html>

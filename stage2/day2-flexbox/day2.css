@@ -2,6 +2,15 @@
     padding: 10px 15px;
     background-color: white;
     margin: 5px 5px;
+    word-break: keep-all;
+}
+
+p {
+    word-break: break-all;
+}
+
+.normal-p {
+    margin: 0px;
 }
 
 body {
@@ -13,9 +22,36 @@ body {
     height: 30px;
 }
 
-.container {
+.container  {
     padding: 0px;
     display: flex;
+}
+
+.align-items-container {
+    padding: 0px;
+    display: flex;
+    height: 80px;
+    flex-direction: row;
+}
+
+.flex-wrap-container {
+    padding: 0px;
+    display: flex;
+    height: 120px;
+    width: 400px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.align-content-container {
+    padding: 0px;
+    height: 120px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .ele1 {
@@ -31,4 +67,69 @@ body {
 .ele3 {
     margin: 0px;
     background-color: sienna;
+}
+
+.ele4 {
+    margin: 0px;
+    background-color: greenyellow;
+}
+
+
+
+.grow-container {
+    padding: 0px;
+    margin: 0px;
+    width: 600px;
+    height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background-color: darkgray;
+    border: 1px solid black;
+}
+
+.item200 {
+    padding: 0px;
+    margin: 0px;
+    width: 150px;
+    height: 50px;
+    max-width: 200px;
+    flex-grow: 1;
+    text-align: center;
+    line-height: 50px;
+}
+
+.item190 {
+    padding: 0px;
+    margin: 0px;
+    width: 150px;
+    height: 50px;
+    max-width: 190px;
+    flex-grow: 1;
+    flex-basis: auto;
+    text-align: center;
+    line-height: 50px;
+}
+
+.shrink-container {
+    padding: 0px;
+    margin: 0px;
+    width: 600px;
+    height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background-color: darkgray;
+    border: 1px solid black;
+}
+
+.shrink-item {
+    padding: 0px;
+    margin: 0px;
+    width: 250px;
+    height: 50px;
+    flex-shrink: 1;
+    text-align: center;
+    line-height: 50px;
+    opacity: 0.75;
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>align-items</title>
+    <link rel="stylesheet" href="day2.css">
+</head>
+<body>
+    <div class="title">align-items</div>
+    <p>
+        align-items: 它决定「纵轴」items 的对齐方式
+        flex-direction 会影响纵轴的方向，这一点需要注意，纵轴不一定是垂直方向，不能把 align-items 看做是控制垂直方向的对齐方式。它主要有以下几个值：
+        
+        flex-start（默认）：与纵轴的起始位置（cross start）对齐；
+        flex-end：与纵轴的结束位置（cross end）对齐；
+        center：居中与纵轴；
+        baseline：与基线对齐；
+        stretch：扩展满纵轴；
+    </p>
+    
+    <div class="title">1.  align-items: flex-start</div>
+    <div class="align-items-container" style="align-items: flex-start;">
+        <div class="ele1">詹姆斯哈登</div>
+        <div class="ele2">科比布莱恩特</div>
+        <div class="ele3">库里</div>
+    </div>
+
+    <div class="title">2.  align-items: flex-end</div>
+    <div class="align-items-container" style="align-items: flex-end;">
+        <div class="ele1">詹姆斯哈登</div>
+        <div class="ele2">科比布莱恩特</div>
+        <div class="ele3">库里</div>
+    </div>
+
+    <div class="title">3.  align-items: center</div>
+    <div class="align-items-container" style="align-items: center">
+            <div class="ele1">詹姆斯哈登</div>
+            <div class="ele2">科比布莱恩特</div>
+            <div class="ele3">库里</div>
+    </div>
+
+    <div class="title">4. align-items: baseline</div>
+    <div class="align-items-container" style="align-items: baseline;">
+            <div class="ele1">詹姆斯哈登</div>
+            <div class="ele2">科比布莱恩特</div>
+            <div class="ele3">库里</div>
+    </div>
+    
+    <div class="title">5. align-items: stretch</div>
+    <div class="align-items-container" style="align-items: stretch;">
+            <div class="ele1">詹姆斯哈登</div>
+            <div class="ele2">科比布莱恩特</div>
+            <div class="ele3">库里</div>
+    </div>
+    
+</body>
+</html>
