@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fixed</title>
+    <style>
+        .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        color: white;
+        }
+
+        #one {
+        position: fixed;
+        top: 80px;
+        left: 10px;
+        background: blue;
+        }
+
+        .outer {
+        width: 500px;
+        height: 300px;
+        overflow: scroll;
+        padding-left: 150px;
+        background-color: lightcoral;
+        }
+
+        .statement {
+            background-color: lightsalmon;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue tortor eget pulvinar lobortis.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam ac dolor augue.
+                Pellentesque mi mi, laoreet et dolor sit amet, ultrices varius risus. Nam vitae iaculis elit.
+                Aliquam mollis interdum libero. Sed sodales placerat egestas. Vestibulum ut arcu aliquam purus viverra dictum vel sit amet mi.
+                Duis nisl mauris, aliquam sit amet luctus eget, dapibus in enim. Sed velit augue, pretium a sem aliquam, congue porttitor tortor.
+                Sed tempor nisl a lorem consequat, id maximus erat aliquet. Sed sagittis porta libero sed condimentum.
+                Aliquam finibus lectus nec ante congue rutrum. Curabitur quam quam, accumsan id ultrices ultrices, tempor et tellus.
+        </p>
+        <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue tortor eget pulvinar lobortis.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam ac dolor augue.
+                Pellentesque mi mi, laoreet et dolor sit amet, ultrices varius risus. Nam vitae iaculis elit.
+                Aliquam mollis interdum libero. Sed sodales placerat egestas. Vestibulum ut arcu aliquam purus viverra dictum vel sit amet mi.
+                Duis nisl mauris, aliquam sit amet luctus eget, dapibus in enim. Sed velit augue, pretium a sem aliquam, congue porttitor tortor.
+                Sed tempor nisl a lorem consequat, id maximus erat aliquet. Sed sagittis porta libero sed condimentum.
+                Aliquam finibus lectus nec ante congue rutrum. Curabitur quam quam, accumsan id ultrices ultrices, tempor et tellus.
+        </p>
+        <div class="box" id="one">One</div>
+    </div>
+
+
+    <p class="statement">
+        Fixed布局也会将元素从流式布局中移除，fixed元素的位置是相对于viewport建立的initial containing block(ICB)的。
+        <br>
+        除非它的某个父元素的transform, perspective或filter属性设置了非none的值
+        <br>
+        那么这个父元素将取代ICB成为fixed元素的containing block。
+        <br>
+        <br>
+        这个布局可以用来创建一个固定的、不受页面滑动影响的"漂浮"元素。
+        <br>
+        在例子中，"One"这个元素被固定在top: 80px; left: 10px的位置，即使页面滑动，它也会保持跟viewport的相同距离。
+    </p>
+</body>
+</html>

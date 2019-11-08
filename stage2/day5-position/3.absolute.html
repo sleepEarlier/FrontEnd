@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>absolute</title>
+    <style>
+        html {
+            margin 0px;
+            padding: 0px;
+        }
+
+        body {
+        width: 500px;
+        margin: 0 auto;
+        background-color: lightblue;
+        }
+
+        p {
+        background: aqua;
+        border: 3px solid blue;
+        padding: 10px;
+        margin: 10px;
+        }
+
+        span {
+        background: red;
+        border: 1px solid black;
+        }
+
+        .positioned {
+        position: absolute;
+        background: yellow;
+        top: 0px;
+        left: 10px;
+        opacity: 0.5;
+        margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: relative; top: 10px; margin-top: 40px; background-color: lightcoral;">
+        <p>
+            absolute: 绝对布局，与相对布局相反，绝对布局会将元素从原来的流式布局中移除，元素的位置会相对于最近的那个父块元素（position属性不是static的块元素），如果没有则是相对于initial containing block(ICB)。
+            <br>
+            根元素HTML是一个ICB。下面的例子中,absolute元素是相对其父元素div布局的，因为我们设置了这个div的position为relative，满足上面的position属性不是static的父块元素。
+            <br>
+        </p>
+
+
+        <h1>Absolute positioning</h1>
+
+        <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+
+        <p class="positioned">absolute position p element.</p>
+
+        <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+
+        <p>inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, and adjacent text nodes, if there is space on the same line. Overflowing inline elements <span>wrap onto a new line if possible — like this one containing text</span>, or just go on to a new line if not, much like this image will do: <img src="https://mdn.mozillademos.org/files/13360/long.jpg"></p>
+    </div>
+</body>
+</html>

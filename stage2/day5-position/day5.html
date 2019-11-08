@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day 5</title>
+    <link rel="stylesheet" href="./day5.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/common.js"></script>
+</head>
+<body>
+    <div class="cell" onclick="openPage('1.static.html')">1.static</div>
+    <div class="cell" onclick="openPage('2.relative.html')">2.relative</div>
+    <div class="cell" onclick="openPage('3.absolute.html')">3.absolute</div>
+    <div class="cell" onclick="openPage('4.fixed.html')">4.fixed</div>
+    <div class="cell" onclick="openPage('5.sticky.html')">5.sticky</div>
+    <p>
+        HTML元素的布局默认是流式布局，使用 css 中的 position 属性可以让元素脱离流式布局，使其按照自己特有的方式进行布局，比如让某个元素始终停到可视区域的顶部，让某个元素停靠在某个元素的右边。
+        <br>
+        position 的作用就是要把某个元素放到特定的位置，为了更方便地把某个元素放到指定的位置，它提供了多个值 static(默认)、relative、absolute、fixed、sticky、-webkit-sticky。
+    </p>
+    <p>
+        static: 默认的流式布局
+    </p>
+    <p>
+        relative: 是相对布局，相对原来的流式布局位置，进行top\left\bottom\right的偏移，不会影响原来的流式布。属性 top 和 bottom 、left 和 right 不能同时使用，同时使用时只有left、bottom会起作用。
+    </p>
+    <p>
+        absolute: 绝对布局，会将元素从原来的流式布局中移除，元素的位置会相对于最近的父元素。
+    </p>
+    <p>
+        fixed: 会将元素从原来的流式布局中移除，
+    </p>
+    <br>
+    <p>默认流式布局</p>
+    <div>
+        <p>第一个</p>
+        <p>第二个</p>
+        <p>第三个</p>
+    </div>
+
+    <p>设置第二个元素的样式</p>
+    <code>
+            position: relative;
+            top:10px;
+            left: 40px;
+    </code>
+    <div class="test">
+        <p>第一个</p>
+        <p>第二个</p>
+        <p>第三个</p>
+    </div>
+    <p>
+        可以看到第二个元素相对初始位置向右和向下偏移了，但原来的流式布局仍然保留。
+    </p>
+</body>
+</html>
