@@ -11,66 +11,95 @@
 </head>
 <body>
         <p>
-                由于 flex-grow 会受 flex-basis 的影响，所有下面的例子都以 flex-basis 的值为 auto。它的作用就是，当所有的 item 未占满容器的宽度时，item 该如何扩充自己以填满容器的剩余空间。
-        </p>
-        <p>
-                理解这个属性前关键要理解剩余空间，在 flex 容器中，如果所有 item 的宽度和小于容器的宽度，那么容器的剩余空间等于容器宽度减去所有item宽度的和。
-        </p>
-    
-        <p>
-            每个item宽度为150px，灰色容器宽度为600px，存在剩余空间150px。
+            由于 flex-grow 会受 flex-basis 的影响，所有下面的例子都以 flex-basis 的值为 auto。
+            <br>
+            它的作用就是，当所有的 item 未占满容器的宽度时，item 该如何扩充自己以填满容器的剩余空间
+            <br>
+            <br>
+            理解这个属性前关键要理解剩余空间，在 flex 容器中，如果所有 item 的宽度和小于容器的宽度，那么容器的剩余空间等于容器宽度减去所有item宽度的和。
+            <br>
+            三个item宽度为120、150、180px，灰色容器宽度为600px，存在剩余空间150px。
+            <br>
             flex-grow 的默认值为 0，表示即使有剩余空间，item 也不会扩充。它不能为负数，但是可以为小数
         </p>
         <div class="grow-container">
-            <div class="item200" style="background-color: yellowgreen; flex-grow: 0;">item1</div>
-            <div class="item200" style="background-color: cadetblue; flex-grow: 0;">item2</div>
-            <div class="item200" style="background-color: saddlebrown; flex-grow: 0;">item3</div>
+            <div class="item200" style="background-color: yellowgreen; flex-grow: 0; width: 120px;">item1</div>
+            <div class="item200" style="background-color: cadetblue; flex-grow: 0; width: 150px">item2</div>
+            <div class="item200" style="background-color: saddlebrown; flex-grow: 0; width: 180px">item3</div>
         </div>
     
         <p>
-            当所有flex-item都设置flex-grow为1，则每个item宽度会增加(600 - 150) * 1/3 = 150px
+            当所有flex-item都设置flex-grow为1，则每个item宽度会再原宽度基础上增加150 * 1/3 = 50px
+            <br>
+            itemWith1 = 120 + 150 * 1/3 = 170
+            <br>
+            itemWith2 = 150 + 150 * 1/3 = 200
+            <br>
+            itemWith3 = 180 + 150 * 1/3 = 230
         </p>
         <div class="grow-container">
-            <div class="item200" style="background-color: yellowgreen;">item1</div>
-            <div class="item200" style="background-color: cadetblue;">item2</div>
-            <div class="item200" style="background-color: saddlebrown;">item3</div>
+            <div class="item200" style="background-color: yellowgreen; width: 120px;">item1</div>
+            <div class="item200" style="background-color: cadetblue; width: 150px;">item2</div>
+            <div class="item200" style="background-color: saddlebrown; width: 180px">item3</div>
+        </div>
+
+    
+        <p>
+            如果每个item设置为0.2，则增加的宽度为 150 * 0.2 = 30px，三个item宽度分别为150、180、210px
+        </p>
+        <div class="grow-container">
+            <div class="item200" style="background-color: yellowgreen; flex-grow: 0.2; width: 120px">item1</div>
+            <div class="item200" style="background-color: cadetblue; flex-grow: 0.2; width: 150px">item2</div>
+            <div class="item200" style="background-color: saddlebrown; flex-grow: 0.2; width: 180px">item3</div>
         </div>
     
-        <p>如果每个item设置为0.2，则增加的宽度为 150 * 0.2 = 30px，最终宽度为150 + 30 = 180px</p>
+        <p>
+                最终item的宽度会受到max-width的影响，仍然以flew-grow: 1为例，且最大宽度max-width为220px时，三个item的最终宽度为175、205、200px。
+                <br>
+                没设置最大宽度的话item3宽度可以达到230px，受到max-width的影响，只能到达220px，多出来10px的剩余宽度，将由item2、item3按他们的flex-grow比例分配，这个例子中为1:1，因此item1、item2比原来再多出5px宽度。
+        </p>
         <div class="grow-container">
-            <div class="item200" style="background-color: yellowgreen; flex-grow: 0.2;">item1</div>
-            <div class="item200" style="background-color: cadetblue; flex-grow: 0.2;">item2</div>
-            <div class="item200" style="background-color: saddlebrown; flex-grow: 0.2;">item3</div>
+            <div class="item200" style="background-color: yellowgreen; width: 120px; max-width: 220px;">item1</div>
+            <div class="item200" style="background-color: cadetblue; width: 150px; max-width: 220px;">item2</div>
+            <div class="item200" style="background-color: saddlebrown; width: 180px; max-width: 220px;">item3</div>
         </div>
         
         <p>
-            最终元素的宽度会受到max-width的影响，仍然以flew-grow: 1为例，同时元素的max-width为190px，则最终元素只能增大到190px
+            计算公式:
+            <br>
+            首先flex-basis的取值顺序为flex-basis -> content size -> width
+            <br>
+            剩余空间freespace = sum(basis) - containerWidth
+            <br>
+            <br>
+            itemwidth计算公式:
+            <br>
+            当所有item的flex的和大于1时( sum(flew-grow) ) > 1 :
+            <br>
+            itemwidth = basis + freespace * flex-grow / ( sum(flex-grow) )
+            <br>
+            <br>
+            例如上面例子中，容器宽度600，item宽度150，basis未设置则取item宽度为150;每个item的flew-grow为1，加起来为3，大于1
+            <br>
+            剩余空间freespace = 600 - (150 + 150 + 150) = 150
+            <br>
+            伸展后元素宽度itemwidth = 150 + 150 * 1 / 3 = 200
+            <br>
+            <br>
+            当所有item的flex的和大于1时( sum(flew-grow) ) <= 1 :
+            <br>
+            itemwidth = basis + freespace * flex-grow
+            <br>
+            <br>
+            例如上面例子中，容器宽度600，item宽度150，basis未设置则取item宽度为150;每个item的flew-grow为0.2，加起来为0.6小于1
+            <br>
+            剩余空间freespace = 600 - (150 + 150 + 150) = 150
+            <br>
+            伸展后元素宽度itemwidth = 150 + 150 * 0.2 = 180
+            <br>
+            <br>
+            可以理解为flew-grow表示伸展系数(比例)，剩余空间按照各自的比例系数来分配，而比例系数之和一般都是小于1的，直接与剩余空间做乘法计算就能得出增加的宽度；而当各item伸展系数之和大于1时，需要计算各自的权重来得到一个小于1的系数，再与剩余空间做乘法计算得出增加的宽度。
+            <br>
         </p>
-        <div class="grow-container">
-            <div class="item190" style="background-color: yellowgreen;">item1</div>
-            <div class="item190" style="background-color: cadetblue;">item2</div>
-            <div class="item190" style="background-color: saddlebrown;">item3</div>
-        </div>
-
-        <p class="normal-p">计算公式：</p>
-        <p class="normal-p">首先flex-basis的取值flex-basis -> content size -> width</p>
-        <p class="normal-p">剩余空间freespace = sum(basis) - containerWidth</p>
-        <p class="normal-p">itemwidth计算公式:</p>
-        <p class="normal-p">当所有item的flex的和大于1时( sum(flew-grow) ) > 1 :</p>
-        <p class="normal-p">itemwidth = basis + freespace * basis / ( sum(basis) )</p>
-        </br>
-        <p class="normal-p">例如上面例子中，容器宽度600，item宽度150，basis未设置则取item宽度为150;每个item的flew-grow为1，加起来为3，大于1</p>
-        <p class="normal-p">剩余空间freespace = 600 - (150 + 150 + 150) = 150</p>
-        <p class="normal-p">伸展后元素宽度itemwidth = 150 + 150 * 1 / 3 = 200</p>
-        </br>
-        <p class="normal-p">当所有item的flex的和大于1时( sum(flew-grow) ) <= 1 :</p>
-        <p class="normal-p">itemwidth = basis + freespace * basis</p>
-        </br>
-        <p class="normal-p">例如上面例子中，容器宽度600，item宽度150，basis未设置则取item宽度为150;每个item的flew-grow为0.2，加起来为0.6小于1</p>
-        <p class="normal-p">剩余空间freespace = 600 - (150 + 150 + 150) = 150</p>
-        <p class="normal-p">伸展后元素宽度itemwidth = 150 + 150 * 0.2 = 180</p>
-        </br>
-        <p class="normal-p">可以理解为flew-grow表示伸展系数(比例)，剩余空间按照各自的比例系数来分配，而比例系数之和一般都是小于1的，直接与剩余空间做乘法计算就能得出增加的宽度；而当各item伸展系数之和大于1时，需要计算各自的权重来得到一个小于1的系数，再与剩余空间做乘法计算得出增加的宽度。</p>
-    
 </body>
 </html>

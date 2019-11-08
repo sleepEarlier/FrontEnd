@@ -31,29 +31,58 @@
             <div class="shrink-item" style="background-color: saddlebrown; flex-shrink: 0; width: 280px;">item3</div>
     </div>
 
-    <p class="normal-p">计算规则:</p>
-    <p class="normal-p">flex-shrink之和: sum-shrink = shrink1 + shrink2 + ... shrinkn  </p>
-    <p class="normal-p">缺少的空间: freespace = containerWidth - ( basis1 + basis2 + ... + basisn ) </p>
-    <p class="normal-p">元素n的收缩比例: shrinkScalen =  basisn * shrinkn / ( basis1 * shrink1 + ... + basisn * shrinkn )</p>
-    <p class="normal-p">当sum-shrink > 1时 </p>
-    <p class="normal-p" style="font-weight: bold;">itemWidthn = basisn + freespace * shrinkscalen</p>
-    <p class="normal-p">完整展开后: itemWidthn = basisn + freespace * basisn * shrinkn / ( basis1 * shrink1 + basis2 * shrink2 + ... + basisn * shrinkn )</p>
+    <p>
+        计算规则:
+        <br>
+        flex-shrink之和: sum-shrink = shrink1 + shrink2 + ... shrinkn
+        <br>
+        缺少的空间: freespace = containerWidth - ( basis1 + basis2 + ... + basisn ) 
+        <br>
+        元素n的收缩比例: shrinkScalen =  basisn * shrinkn / ( basis1 * shrink1 + ... + basisn * shrinkn )
+        <br>
+        当sum-shrink > 1时:
+        <br>
+        itemWidthn = basisn + freespace * shrinkscalen
+        <br>
+        完整展开后: itemWidthn = basisn + freespace * basisn * shrinkn / ( basis1 * shrink1 + basis2 * shrink2 + ... + basisn * shrinkn )
+        <br>
+        <br>
+        例如上面例子中, sum-shrink = 3，大于1
+        <br>
+        container宽度600, 元素1宽度220, 元素2宽度250, 元素3宽度280
+        <br>
+        剩余空间freespace = 600 - 750 = -150
+        <br>
+        收缩比例shrinkScale1 = 220 * 1 / ( 220 * 1 + 250 * 1 + 280 * 1 ) = 22/75
+        <br>
+        itemWidth1 = 220 + (-150) * 22/75 = 176
+        <br>
+        收缩比例shrinkScale2 = 250 * 1 / ( 220 * 1 + 250 * 1 + 280 * 1 ) = 25/75
+        <br>
+        itemWidth2 = 250 + (-150) * 25/75 = 200
+        <br>
+        收缩比例shrinkScale3 = 280 * 1 / ( 220 * 1 + 250 * 1 + 280 * 1 ) = 28/75
+        <br>
+        itemWidth3 = 280 + (-150) * 28/75 = 224
+        <br>
+        <br>
+        当sum-shrink < 1时:
+        <br>
+        realFreespace = freespace * sum-shrink
+        <br>
+        itemWidth = basis + realFreespace * sum-shrink * shrinkScale
+        <br>
+        完整展开后: itemWidth = basis + freespace * basis * shrink / ( basis1 * shrink1 + ... + basisn * shrinkn ) * sum-shrink
+        <br>
+        <br>
+        flex-shrink是item自身的收缩系数，shrinkScale是item在整个container中的收缩的比例，收缩的宽度是以freespace * shrinkScale来计算的。当系数之和小于1时，freespace乘以系数之和后才是真正参与计算分配的真实freespace；而当系数之和大于1时，整个freespace都参与计算分配，直接使用即可。
+        <br>
+    </p>
+    <p class="normal-p"> </p>
+    <p class="normal-p"> </p></1>
+    <p class="normal-p" style="font-weight: bold;"></p>
+    <p class="normal-p"></p>
     <br>
-    <p class="normal-p">例如上面例子中, sum-shrink = 3，大于1</p>
-    <p class="normal-p">container宽度600, 元素1宽度220, 元素2宽度250, 元素3宽度280</p>
-    <p class="normal-p">剩余空间freespace = 600 - 750 = -150</p>
-    <p class="normal-p">收缩比例shrinkScale1 = 220 * 1 / ( 220 * 1 + 250 * 1 + 280 * 1 ) = 22/75</p>
-    <p class="normal-p">itemWidth1 = 220 + (-150) * 22/75 = 176</p>
-    <p class="normal-p">收缩比例shrinkScale2 = 250 * 1 / ( 220 * 1 + 250 * 1 + 280 * 1 ) = 25/75</p>
-    <p class="normal-p">itemWidth2 = 250 + (-150) * 25/75 = 200</p>
-    <p class="normal-p">收缩比例shrinkScale3 = 280 * 1 / ( 220 * 1 + 250 * 1 + 280 * 1 ) = 28/75</p>
-    <p class="normal-p">item2Width = 280 + (-150) * 28/75 = 224</p>
-    <br>
-    <p class="normal-p">当sum-shrink < 1时 </p>
-    <p class="normal-p">realFreespace = freespace * sum-shrink </p></1>
-    <p class="normal-p" style="font-weight: bold;">itemWidth = basis + realFreespace * sum-shrink * shrinkScale</p>
-    <p class="normal-p">完整展开后: itemWidth = basis + freespace * basis * shrink / ( basis1 * shrink1 + ... + basisn * shrinkn ) * sum-shrink</p>
-    <br>
-    <p>flex-shrink是item自身的收缩系数，shrinkScale是item在整个container中的收缩的比例，收缩的宽度是以freespace * shrinkScale来计算的。当系数之和小于1时，freespace乘以系数之和后才是真正参与计算分配的真实freespace；而当系数之和大于1时，整个freespace都参与计算分配，直接使用即可。</p>
+    <p></p>
 </body>
 </html>
