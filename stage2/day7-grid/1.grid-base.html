@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid Base</title>
+    <style>
+        p {
+            background-color: black;
+            color: blanchedalmond;
+        }
+        .container {
+            background-color: darkgray;
+            width: 400px;
+            height: 200px;
+            margin: 10px;
+            display: grid;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        div div {
+            opacity: 0.7;
+        }
+
+        div div:nth-child(1) {
+            background-color: lightgreen;
+        }
+
+        div div:nth-child(2) {
+            background-color: lightsalmon;
+        }
+
+        div div:nth-child(3) {
+            background-color: lightskyblue;
+        }
+
+        div div:nth-child(4) {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        1. grid-template-columns: 定义 grid 布局列的尺寸<br>
+        默认
+    </p>
+    <div class="container">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+
+    <p>
+        1.1 指定宽度<br>
+        grid-template-columns: 40px 60px;
+    </p>
+    <div class="container" style="grid-template-columns: 150px 200px;">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+    
+    <p>
+        1.2 指定比例<br>
+        grid-template-columns: 40% 60%;
+    </p>
+    <div class="container" style="grid-template-columns: 40% 60%;">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+    
+    <p>
+        1.3 弹性宽度fr<br>
+        grid-template-columns: 1fr 2fr;<br>
+        第一列占1/3，第二列占2/3
+    </p>
+    <div class="container" style="grid-template-columns: 1fr 2fr;">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+    
+    <p>
+        1.4 auto: 自动占满空间<br>
+        grid-template-columns: 100px auto;<br>
+    </p>
+    <div class="container" style="grid-template-columns: 100px auto;">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+    
+    <p>
+        1.5 minmax: 设置宽度范围，会优先满足max，如果max大于min则max值无效<br>
+        grid-template-columns: minmax(100px, 1fr) 1fr;<br>
+        除了具体尺寸，minmax中也可以使用auto\fr\max-content\<flex>等值
+    </p>
+    <div class="container" style="grid-template-columns: minmax(200px, 1fr) 1fr;">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+
+    <p>
+        1.6 repeat: 重复设置多个列宽，repeat(count, value)<br>
+        repeat(2, 1fr);<br>
+        等价于grid-template-columns: 1fr 1fr;
+    </p>
+    <div class="container" style="grid-template-columns: repeat(2, 1fr);">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+
+    <p>
+        1.7 max-content: 最大内容宽度，min-content:最小内容宽度<br>
+        grid-template-columns: min-content max-content;<br>
+    </p>
+    <div class="container" style="grid-template-columns: min-content max-content;">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+
+    <p>
+        2 grid-template-rows: 定义 grid 布局行的尺寸<br>
+        取值与grid-template-columns一致<br>
+    </p>
+    <p>
+        grid-template-columns: 1fr 2fr;<br>
+        grid-template-rows: 2fr 1fr;
+    </p>
+    <div class="container" style="grid-template-columns: min-content max-content; grid-template-rows: 2fr 1fr;">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+
+    <p>
+        3. grid-gap<br>
+        grid-gap: row column;<br>
+        grid-row-gap: 行间距<br>
+        grid-column-gap: 列间距<br><br>
+        例: grid-gap: 5px 10px;
+    </p>
+    <div class="container" style="grid-template-columns: min-content max-content; grid-template-rows: 2fr 1fr; grid-gap: 5px 10px;">
+        <div>第一个item</div>
+        <div>第二个</div>
+        <div>33333</div>
+        <div>I'm last one</div>
+    </div>
+
+    
+
+</body>
+</html>
