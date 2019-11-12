@@ -45,7 +45,7 @@
     <p>
         The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of top, right, bottom, and left. The offset does not affect the position of any other elements.
         <br>
-        sticky元素正常状态下会以流式布局展示，滑动到其父元素
+        sticky元素看做relative和fixed的结合，滑动到临界点之前是relative布局，当滑动过临界点后，元素会变成fixed布局，直到滑动到父元素的边界为止。
         <br>
         Sticky positioning can be thought of as a hybrid of relative and fixed positioning. A stickily positioned element is treated as relatively positioned until it crosses a specified threshold, at which point it is treated as fixed until it reaches the boundary of its parent. For instance <span>#one { position: sticky; top: 10px; }</span> would position the element with id one relatively until the viewport were scrolled such that the element would be less than 10 pixels from the top. Beyond that threshold, the element would be fixed to 10 pixels from the top.
     </p>
