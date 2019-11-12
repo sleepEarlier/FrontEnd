@@ -9,12 +9,14 @@
         html {
             margin 0px;
             padding: 0px;
+            background-color: burlywood;
         }
 
         body {
         width: 500px;
         margin: 0 auto;
-        background-color: lightblue;
+        padding: 0px auto;
+        background-color: orangered ;
         }
 
         p {
@@ -40,12 +42,19 @@
     </style>
 </head>
 <body>
-    <div style="position: relative; top: 10px; margin-top: 40px; background-color: lightcoral;">
-        <p>
-            absolute: 绝对布局，与相对布局相反，绝对布局会将元素从原来的流式布局中移除，元素的位置会相对于最近的那个父块元素（position属性不是static的块元素），如果没有则是相对于initial containing block(ICB)。
+    <div style="position: relative; top: 10px; margin-top: 0px; background-color: lightcoral;">
+        <p style="padding-top: 50px;">
+            absolute: 绝对布局，与相对布局相反，绝对布局会将元素从原来的流式布局中移除，元素的位置会相对于它的containing block(CB)。
             <br>
-            根元素HTML是一个ICB。下面的例子中,absolute元素是相对其父元素div布局的，因为我们设置了这个div的position为relative，满足上面的position属性不是static的父块元素。
+            如果存在某个父元素，这个父元素的position属性不是static，则这个父元素为它的containing block。否则viewport创建的initial containing block(ICB)为它的containing block。
             <br>
+            下面的例子中,absolute元素是相对其父元素div布局的，因为我们设置了这个div的position为relative，满足上面的position属性不是static的父块元素。
+            <br>
+            absolute布局中，top、bottom、left、right可以同时使用。
+            <br>
+            top: 0px; left: 0px; 则元素会在其CB的左上角；
+            <br>
+            top: 0px; left: 0px; top: 0px; bottom: 0px; 则元素会盖满它的CB。
         </p>
 
 
