@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid Area</title>
+    <style>
+        div {
+            text-align: center;
+        }
+
+        .container {
+            background-color: darkgray;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(9, 30px);
+            row-gap: 20px;
+            column-gap: 20px;
+            margin: 40px;
+            grid-auto-rows: 40px;
+        }
+
+        .house {
+            background-color: cornflowerblue;
+            grid-row: 3 / -3;
+            grid-column: 3 / -3;
+        }
+
+        .garden {
+            background-color: crimson;
+            grid-row: 8 / 10;
+            grid-column: 3 / -3;
+        }
+
+        .restroom {
+            background-color: darksalmon;
+            grid-row: 3 / -1;
+            grid-column: 1 / 3;
+        }
+
+        .guoyuan {
+            background-color: deeppink;
+            grid-row: 1 / -1;
+            grid-column: 7 / -1;
+        }
+
+        .caiyuan {
+            background-color: greenyellow;
+            grid-row: 1 / 3;
+            grid-column: 1 / -3;
+        }
+
+        .tree {
+            background-color: green;
+            grid-row: 10 / 11;
+            grid-column: 1 / -1;
+        }
+
+
+        .areacontainer {
+            background-color: darkgray;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(9, 30px);
+            row-gap: 20px;
+            column-gap: 20px;
+            margin: 40px 40px;
+            grid-auto-rows: 40px;
+            grid-template-areas: 
+            "areacaiyuan areacaiyuan areacaiyuan areacaiyuan areacaiyuan areacaiyuan areaguoyuan areaguoyuan"
+            "areacaiyuan areacaiyuan areacaiyuan areacaiyuan areacaiyuan areacaiyuan areaguoyuan areaguoyuan"
+            "arearest arearest areahouse areahouse areahouse areahouse areaguoyuan areaguoyuan"
+            "arearest arearest areahouse areahouse areahouse areahouse areaguoyuan areaguoyuan"
+            "arearest arearest areahouse areahouse areahouse areahouse areaguoyuan areaguoyuan"
+            "arearest arearest areahouse areahouse areahouse areahouse areaguoyuan areaguoyuan"
+            "arearest arearest areahouse areahouse areahouse areahouse areaguoyuan areaguoyuan"
+            "arearest arearest areagarden areagarden areagarden areagarden areaguoyuan areaguoyuan"
+            "arearest arearest areagarden areagarden areagarden areagarden areaguoyuan areaguoyuan"
+            ;
+        }
+
+        .areahouse {
+            background-color: cornflowerblue;
+            grid-area: areahouse;
+        }
+
+        .areagarden {
+            background-color: crimson;
+            grid-area: areagarden;
+        }
+
+        .arearest {
+            background-color: darksalmon;
+            grid-area: arearest;
+        }
+
+        .areaguoyuan {
+            background-color: deeppink;
+            grid-area: areaguoyuan;
+        }
+
+        .areacaiyuan {
+            background-color: greenyellow;
+            grid-area: areacaiyuan;
+        }
+
+        .areatree {
+            background-color: green;
+            grid-area: areatree;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="house">房子</div>
+        <div class="garden">花园</div>
+        <div class="restroom">休息区</div>
+        <div class="caiyuan">菜园</div>
+        <div class="guoyuan">果园</div>
+        <div class="tree">树林</div>
+    </div>
+    <br>
+    <br>
+    <div class="areacontainer">
+        <div class="areahouse">房子</div>
+        <div class="areagarden">花园</div>
+        <div class="arearest">休息区</div>
+        <div class="areacaiyuan">菜园</div>
+        <div class="areaguoyuan">果园</div>
+        <!-- <div class="areatree">树林</div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+    margin: 10px auto;
+    width: 900px;
+}
+.container {
+    background-color: lightgray;
+    width: 600px;
+    height: 400px;
+    padding: 10px;
+}
+
+p {
+    padding: 1rem;
+    border: 1px dashed burlywood;
+}
+
+.box {
+    float: left;
+    background-color: lightgreen;
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+}
+
+.special {
+    background-color: darkolivegreen;
+    padding: 10px;
+    color: #fff;
+}
+
+.wrapper {
+    background-color: red;
+    padding: 10px;
+
+}
+
+.wrapper::after {
+    content: "";
+    clear: both;
+    display: block;
+}

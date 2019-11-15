@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flow</title>
+    <link rel="stylesheet" href="./day12.css">
+</head>
+<body>
+    <p>
+        float:left; 向左浮动<br>
+        float:right; 向右浮动<br>
+        浮动后元素会脱离流失布局。默认情况下其它元素会按不存在此浮动元素的情况下布局，可以通过清浮动改变这种表现。
+    </p>
+    <p>
+        float:left;
+    </p>
+    <div class="container">
+        <h1>this is headline 1</h1>
+        <div class="box">float</div>
+        <p class="special">This is a paragraph</p>
+        <p class="">This is a paragraph</p>
+    </div>
+
+    <p>
+        float:right;
+    </p>
+    <div class="container">
+        <h1>this is headline 1</h1>
+        <div class="box" style="float: right;">float</div>
+        <p class="special">This is a paragraph</p>
+        <p class="">This is a paragraph</p>
+    </div>
+    
+    <p>
+        给第一个p元素清浮动<br>
+        clear: left;<br>
+        p元素不会再紧跟着H1布局
+    </p>
+    <div class="container">
+        <h1>this is headline 1</h1>
+        <div class="box">float</div>
+        <p class="special" style="clear: left;">This is a paragraph</p>
+        <p class="">This is a paragraph</p>
+    </div>
+
+    <p>
+        有时候，类似下面这种情况，浮动元素被一个 div 包裹着，如果使用 clear 属性进行清除时<br>会发现红色区域并不能把浮动元素包裹着，这是因为 float 元素脱离了流式布局
+    </p>
+    <div class="container">
+        <div>
+            <h1>this is headline 1</h1>
+            <div class="box" style="background-color: red;">float</div>
+            <p style="background-color: cyan;">This is a cyan paragraph</p>
+        </div>
+
+        <div>
+            <p class="special" style="clear: left;">This is a paragraph with clear</p>
+            <p>This is other paragraph in other div</p>
+        </div>
+    </div>
+
+    <p>
+        可以
+    </p>
+    <div class="container">
+        <h1>this is headline 1</h1>
+        <div class="wrapper">
+            <div class="box">float</div>
+            <p style="background-color: cyan;">This is a cyan paragraph</p>
+        </div>
+        <p class="special" style="clear: left;">This is a paragraph with clear</p>
+        <p>This is other paragraph in other div</p>
+    </div>
+</body>
+</html>
