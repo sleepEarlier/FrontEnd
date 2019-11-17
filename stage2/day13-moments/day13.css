@@ -1,0 +1,42 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 375px;
+    background-color: lightgray;
+    margin: 0 auto;
+}
+
+.top {
+    height: 339px;
+    background-color: white;
+    position: relative;
+}
+
+.top-background {
+    height: 319px;
+    background-image: url("./assets/bg.jpg");
+    background-size: cover;
+}
+
+.avata {
+    position: absolute;
+    top: 268px;
+    right: 12px;
+    width: 71px;
+    height: 71px;
+    border-radius: 6px;
+    background-image: url("http://d.hiphotos.baidu.com/image/pic/item/77094b36acaf2edda08f1b55801001e93901930b.jpg");
+    background-size: cover;
+}
+
+.username {
+    position: absolute;
+    top: 283px;
+    right: 107px;
+    height: 24px;
+    font-size: 17px;
+    color: #fff;
+    font-family: PingFangSC-Semibold;
+}

@@ -62,7 +62,14 @@
     </div>
 
     <p>
-        可以
+        可以通过下面的方法来解决这个问题：
+    </p>
+    <p>
+        .wrapper::after {<br>
+            content: "";<br>
+            clear: both;<br>
+            display: block;<br>
+          }
     </p>
     <div class="container">
         <h1>this is headline 1</h1>
@@ -73,5 +80,17 @@
         <p class="special" style="clear: left;">This is a paragraph with clear</p>
         <p>This is other paragraph in other div</p>
     </div>
+
+    <p>
+        也可以通过 overflow 属性解决，给 wrapper 选择器添加 overflow：auto。
+    </p>
+    <p>
+        .wrapper {<br>
+            background-color: red;<br>
+            color: #fff;<br>
+            padding: 10px;<br>
+            overflow: auto;<br>
+        }
+    </p>
 </body>
 </html>
