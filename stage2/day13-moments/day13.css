@@ -3,6 +3,10 @@
     padding: 0px;
 }
 
+html {
+    background-color: lightskyblue;
+}
+
 ul {
     list-style: none;
 }
@@ -11,7 +15,6 @@ ul {
     width: 375px;
     background-color: lightgray;
     margin: 0 auto;
-    height: 2500px;
 }
 
 .top {
@@ -22,7 +25,7 @@ ul {
 
 .top-background {
     height: 319px;
-    background-image: url("./assets/bg.jpg");
+    background-image: url("http://pic4.zhimg.com/v2-abf63fd27a56b30a8c5f277f1b24224f_b.jpg");
     background-size: cover;
 }
 
@@ -33,7 +36,7 @@ ul {
     width: 71px;
     height: 71px;
     border-radius: 6px;
-    background-image: url("http://d.hiphotos.baidu.com/image/pic/item/77094b36acaf2edda08f1b55801001e93901930b.jpg");
+    background-image: url("http://cdn.duitang.com/uploads/item/201410/26/20141026191422_yEKyd.thumb.700_0.jpeg");
     background-size: cover;
 }
 
@@ -52,15 +55,14 @@ ul {
     flex-direction: row;
     justify-content: space-evenly;
     border-bottom: 1px solid #F3F3F3;
+    background-color: white;
 }
 
 .left {
-    background-color: lightseagreen;
     width: 44px;
 }
 
 .right {
-    background-color: lightskyblue;
     width: 301px;
 }
 
@@ -95,40 +97,54 @@ ul {
     row-gap: 5px;
 }
 
+.gridimages > div {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .gridimages div:nth-child(1) {
     background-color: blanchedalmond;
+    background-image: url("http://a.hiphotos.baidu.com/image/h%3D300/sign=b38f3fc35b0fd9f9bf175369152cd42b/9a504fc2d5628535bdaac29e9aef76c6a6ef63c2.jpg");
 }
 
 .gridimages div:nth-child(2) {
     background-color: rebeccapurple;
+    background-image: url("http://a.hiphotos.baidu.com/image/h%3D300/sign=a62e824376d98d1069d40a31113eb807/838ba61ea8d3fd1fc9c7b6853a4e251f94ca5f46.jpg");
 }
 
 .gridimages div:nth-child(3) {
     background-color: firebrick;
+    background-image: url("http://e.hiphotos.baidu.com/image/h%3D300/sign=907f6e689ddda144c5096ab282b6d009/dc54564e9258d1092f7663c9db58ccbf6c814d30.jpg");
 }
 
 .gridimages div:nth-child(4) {
     background-color: chartreuse;
+    background-image: url("http://c.hiphotos.baidu.com/image/h%3D300/sign=0cc74ef9a3773912db268361c8188675/9922720e0cf3d7ca810f3732f81fbe096a63a9fd.jpg");
 }
 
 .gridimages div:nth-child(5) {
     background-color: chocolate;
+    background-image: url("http://g.hiphotos.baidu.com/image/h%3D300/sign=b5e4c905865494ee982209191df4e0e1/c2cec3fdfc03924590b2a9b58d94a4c27d1e2500.jpg");
 }
 
 .gridimages div:nth-child(6) {
     background-color: cyan;
+    background-image: url("http://b.hiphotos.baidu.com/image/h%3D300/sign=92afee66fd36afc3110c39658318eb85/908fa0ec08fa513db777cf78376d55fbb3fbd9b3.jpg");
 }
 
 .gridimages div:nth-child(7) {
     background-color: wheat;
+    background-image: url("http://f.hiphotos.baidu.com/image/h%3D300/sign=0c78105b888ba61ec0eece2f713597cc/0e2442a7d933c8956c0e8eeadb1373f08202002a.jpg");
 }
 
 .gridimages div:nth-child(8) {
     background-color: gold;
+    background-image: url("http://f.hiphotos.baidu.com/image/h%3D300/sign=d985fb87d81b0ef473e89e5eedc551a1/b151f8198618367aa7f3cc7424738bd4b31ce525.jpg");
 }
 
 .gridimages div:nth-child(9) {
     background-color: rosybrown;
+    background-image: url("http://a.hiphotos.baidu.com/image/h%3D300/sign=cb60c5d972f0f736c7fe4a013a54b382/f603918fa0ec08fa3139e00153ee3d6d55fbda5f.jpg");
 }
 
 .toolbar {
@@ -137,7 +153,6 @@ ul {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: navy;
 }
 
 .time {
@@ -156,35 +171,25 @@ ul {
 .feedback {
     margin-bottom: 13.9px;
     height: 61px;
-    background: #F3F3F5;
+    background-color: #F3F3F5;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-.like {
+.likes {
     font-family: PingFangSC-Medium;
     font-size: 15px;
     color: #536892;
+    background-color: #F3F3F5;
+    border-bottom: 1px solid #EBEBEC;
+    height: 30px;
+    width: 301px;
+    line-height: 30px;
 }
 
-
-/* .pa::before {
-    display: inline-block;
-    content: ''; 
-    vertical-align: middle;
-    background-image: url("http://smt-cdn.yun.city.pingan.com/isz/app/icon/homepage/20190829/gongjiaochuxing.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-left: 15px;
-    margin-right: 5px;
-    width: 30px;
-    height: 30px;
-} */
-
-.like::before {
+.likes::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -196,4 +201,83 @@ ul {
     margin-right: 7px;
     width: 11px;
     height: 9.8px;
+}
+
+.comment {
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: #000000;
+    background-color: #F3F3F5;
+    height: 30px;
+    width: 301px;
+    vertical-align: center;
+    line-height: 30px;
+}
+
+.comment > span {
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    vertical-align: middle;
+    line-height: 30px;
+    height: 30px;
+    background: #F3F3F5;
+    margin-right: 0px;
+}
+
+.commentname {
+    color: #536892;
+    margin-left: 9px;
+    margin-right: 0px;
+    background-color: lightpink;
+}
+
+.commentcontent {
+    color: #000000;
+    margin-left: 0px;
+    background-color: lightsalmon;
+}
+
+.link {
+    height: 48px;
+    background: #F3F3F5;
+    line-height: 48px;
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: #121212;
+}
+
+.link::before {
+    content: "";
+    width: 42px;
+    height: 42px;
+    background-image: url("http://e.hiphotos.baidu.com/image/h%3D300/sign=3d9fc10fa3014c08063b2ea53a7a025b/359b033b5bb5c9eac1754f45df39b6003bf3b396.jpg");
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    margin: 3px 9px 3px 4px;
+}
+
+
+.singleImage {
+    background-image: url("http://a.hiphotos.baidu.com/image/h%3D300/sign=b38f3fc35b0fd9f9bf175369152cd42b/9a504fc2d5628535bdaac29e9aef76c6a6ef63c2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 260px;
+    height: 162px;
+    margin-top: 10px;
+    margin-bottom: 11px;
+}
+
+.squareImage {
+    background-image: url("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2035887750,1520103392&fm=26&gp=0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 147px;
+    height: 147px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 }
